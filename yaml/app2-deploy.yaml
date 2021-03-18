@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: poccharles-app2
+  namespace: poccharles-app2
+spec:
+  selector:
+    matchLabels:
+      app: poccharles-app2
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: poccharles-app2
+    spec:
+      containers:
+      - name: poccharles-app2
+        image: ailtonmsj/app2:v1
+        #imagePullPolicy: Always
+        volumeMounts:
+        - mountPath: /www
+          name: tela1
+      volumes:
+      - name: tela1
+        configMap:
+          name: tela1
+---

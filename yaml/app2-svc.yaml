@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: poccharles-app2
+  namespace: poccharles-app2
+spec:
+  selector:
+    app: poccharles-app2
+  ports:
+    - name: http
+      port: 8080
+  type: NodePort
+---

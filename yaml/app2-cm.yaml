@@ -1,0 +1,91 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tela1
+  namespace: poccharles-app2
+data:
+  index.jsp: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<title>VERSAO 1</title>\n<meta
+    charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<style>\n*
+    {\n  box-sizing: border-box;\n}\n\n/* modal inicio */\n\n/* The Modal (background)
+    */\n.modal {\n  display: none; /* Hidden by default */\n  position: fixed; /*
+    Stay in place */\n  z-index: 1; /* Sit on top */\n  left: 0;\n  top: 0;\n  width:
+    100%; /* Full width */\n  height: 100%; /* Full height */\n  overflow: auto; /*
+    Enable scroll if needed */\n  background-color: rgb(0,0,0); /* Fallback color
+    */\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\n  padding-top:
+    60px;\n}\n\n/* Modal Content/Box */\n.modal-content {\n  background-color: #fefefe;\n
+    \ margin: 5px auto; /* 15% from the top and centered */\n  border: 1px solid #888;\n
+    \ width: 80%; /* Could be more or less, depending on screen size */\n}\n\n/* The
+    Close Button */\n.close {\n  /* Position it in the top right corner outside of
+    the modal */\n  position: absolute;\n  right: 25px;\n  top: 0;\n  color: #000;\n
+    \ font-size: 35px;\n  font-weight: bold;\n}\n\n/* Close button on hover */\n.close:hover,\n.close:focus
+    {\n  color: red;\n  cursor: pointer;\n}\n\n/* Add Zoom Animation */\n.animate
+    {\n  -webkit-animation: animatezoom 0.6s;\n  animation: animatezoom 0.6s\n}\n\n@-webkit-keyframes
+    animatezoom {\n  from {-webkit-transform: scale(0)}\n  to {-webkit-transform:
+    scale(1)}\n}\n\n@keyframes animatezoom {\n  from {transform: scale(0)}\n  to {transform:
+    scale(1)}\n}\n\n\n\n/* Bordered form */\nform {\n  border: 3px solid #f1f1f1;\n}\n\n/*
+    Full-width inputs */\ninput[type=text], input[type=password] {\n  width: 100%;\n
+    \ padding: 12px 20px;\n  margin: 8px 0;\n  display: inline-block;\n  border: 1px
+    solid #ccc;\n  box-sizing: border-box;\n}\n\n/* Set a style for all buttons */\nbutton
+    {\n  background-color: #4CAF50;\n  color: white;\n  padding: 14px 20px;\n  margin:
+    8px 0;\n  border: none;\n  cursor: pointer;\n  width: 100%;\n}\n\n/* Add a hover
+    effect for buttons */\nbutton:hover {\n  opacity: 0.8;\n}\n\n/* Extra style for
+    the cancel button (red) */\n.cancelbtn {\n  width: auto;\n  padding: 10px 18px;\n
+    \ background-color: #f44336;\n}\n\n/* Center the avatar image inside this container
+    */\n.imgcontainer {\n  text-align: center;\n  margin: 24px 0 12px 0;\n}\n\n/*
+    Avatar image */\nimg.avatar {\n  width: 40%;\n  border-radius: 50%;\n}\n\n/* Add
+    padding to containers */\n.container {\n  padding: 16px;\n}\n\n/* The \"Forgot
+    password\" text */\nspan.psw {\n  float: right;\n  padding-top: 16px;\n}\n\n/*
+    Change styles for span and cancel button on extra small screens */\n@media screen
+    and (max-width: 300px) {\n  span.psw {\n    display: block;\n    float: none;\n
+    \ }\n  .cancelbtn {\n    width: 100%;\n  }\n}\n\n\n/* modal fim */\n\n\n/* Set
+    a style for all buttons */\nbutton {\n  background-color: #4CAF50;\n  color: white;\n
+    \ padding: 14px 20px;\n  margin: 8px 0;\n  border: none;\n  cursor: pointer;\n
+    \ width: 100%;\n}\n\n/* Style the body */\nbody {\n  font-family: Arial, Helvetica,
+    sans-serif;\n  margin: 0;\n}\n\n/* Header/logo Title */\n.header {\n  padding:
+    80px;\n  text-align: center;\n  background: #1abc9c;\n  color: white;\n}\n\n/*
+    Increase the font size of the heading */\n.header h1 {\n  font-size: 40px;\n}\n\n/*
+    Sticky navbar - toggles between relative and fixed, depending on the scroll position.
+    It is positioned relative until a given offset position is met in the viewport
+    - then it \"sticks\" in place (like position:fixed). The sticky value is not supported
+    in IE or Edge 15 and earlier versions. However, for these versions the navbar
+    will inherit default position */\n.navbar {\n  overflow: hidden;\n  background-color:
+    #333;\n  position: sticky;\n  position: -webkit-sticky;\n  top: 0;\n}\n\n/* Style
+    the navigation bar links */\n.navbar a {\n  float: left;\n  display: block;\n
+    \ color: white;\n  text-align: center;\n  padding: 14px 20px;\n  text-decoration:
+    none;\n}\n\n\n/* Right-aligned link */\n.navbar a.right {\n  float: right;\n}\n\n/*
+    Change color on hover */\n.navbar a:hover {\n  background-color: #ddd;\n  color:
+    black;\n}\n\n/* Active/current link */\n.navbar a.active {\n  background-color:
+    #666;\n  color: white;\n}\n\n/* Column container */\n.row {  \n  display: -ms-flexbox;
+    /* IE10 */\n  display: flex;\n  -ms-flex-wrap: wrap; /* IE10 */\n  flex-wrap:
+    wrap;\n}\n\n/* Create two unequal columns that sits next to each other */\n/*
+    Sidebar/left column */\n.side {\n  -ms-flex: 30%; /* IE10 */\n  flex: 30%;\n  background-color:
+    #f1f1f1;\n  padding: 20px;\n}\n\n/* Main column */\n.main {   \n  -ms-flex: 70%;
+    /* IE10 */\n  flex: 70%;\n  background-color: white;\n  padding: 20px;\n}\n\n/*
+    Fake image, just for this example */\n.fakeimg {\n  background-color: #aaa;\n
+    \ width: 100%;\n  padding: 20px;\n}\n\n/* Footer */\n.footer {\n  padding: 20px;\n
+    \ text-align: center;\n  background: #ddd;\n}\n\n/* Responsive layout - when the
+    screen is less than 700px wide, make the two columns stack on top of each other
+    instead of next to each other */\n@media screen and (max-width: 700px) {\n  .row
+    {   \n    flex-direction: column;\n  }\n}\n\n/* Responsive layout - when the screen
+    is less than 400px wide, make the navigation links stack on top of each other
+    instead of next to each other */\n@media screen and (max-width: 400px) {\n  .navbar
+    a {\n    float: none;\n    width: 100%;\n  }\n}\n</style>\n</head>\n<body>\n\n<div
+    class=\"header\">\n  <h1>Testando a hipotese</h1>\n  <p>Deploy Charles CD</p>\n</div>\n\n<div
+    class=\"navbar\">\n  <a href=\"#\" class=\"active\">Home</a>\n</div>\n\n<div class=\"row\">\n
+    \ <div class=\"side\">\n    <h2>Mais Sobre</h2>\n    <button onclick=\"document.getElementById('id01').style.display='block'\">Entenda
+    mais sobre</button>\n  </div>\n  <div class=\"main\">\n    <h2>ARQUTETURA ISTIO</h2>\n
+    \   <img src=\"https://istio.io/latest/docs/ops/deployment/architecture/arch.svg\"
+    >\n    <p>O que é Istio</p>\n    <p>As plataformas em nuvem oferecem uma grande
+    variedade de benefícios para as organizações que as utilizam. No entanto, não
+    há como negar que a adoção da nuvem pode colocar tensões nas equipes de DevOps.
+    Os desenvolvedores devem usar microsserviços para arquitetar a portabilidade,
+    enquanto os operadores estão gerenciando implementações híbridas e de várias nuvens
+    extremamente grandes. O Istio permite conectar, proteger, controlar e observar
+    serviços.</p>\n  </div>\n</div>\n\n<div class=\"footer\">\n  <h2>Versão 1</h2>\n</div>\n\n\n<!--
+    The Modal -->\n<div id=\"id01\" class=\"modal\">\n  <span onclick=\"document.getElementById('id01').style.display='none'\"\nclass=\"close\"
+    title=\"Close Modal\">&times;</span>\n\n  <!-- Modal Content -->\n  <form class=\"modal-content
+    animate\" action=\"/action_page.php\">\n    \n    <div class=\"container\">\n
+    \     \n\n    <div class=\"container\" style=\"background-color:#f1f1f1\">\n      <button
+    type=\"button\" onclick=\"document.getElementById('id01').style.display='none'\"
+    class=\"cancelbtn\">Fechar</button>\n    </div>\n  </form>\n</div>\n\n</body>\n</html>\n"
+---
