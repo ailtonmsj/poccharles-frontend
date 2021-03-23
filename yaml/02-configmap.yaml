@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: tela1
-  namespace: poccharles-app2
+  name: tela-frontend
+  namespace: poccharles
 data:
   index.jsp: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<title>VERSAO 1</title>\n<meta
     charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<style>\n*

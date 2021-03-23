@@ -7,7 +7,7 @@ EXPOSE 8080
 
 # application setup
 # prepare the app config for Unit
-RUN mkdir /www/ && echo '{                                                             \
+RUN mkdir /www/ && echo '{                                                 \
     "listeners": {                                                         \
         "*:8080": {                                                        \
             "pass": "applications/java_app"                                \

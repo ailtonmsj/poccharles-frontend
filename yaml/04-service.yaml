@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: poccharles-app2
-  namespace: poccharles-app2
+  name: poccharles-frontend
+  namespace: poccharles
 spec:
   selector:
-    app: poccharles-app2
+    app: poccharles-frontend
   ports:
     - name: http
       port: 8080

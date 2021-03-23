@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: poccharles-frontend
+  namespace: poccharles
+spec:
+  selector:
+    matchLabels:
+      app: poccharles-frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: poccharles-frontend
+    spec:
+      containers:
+      - name: poccharles-frontend
+        image: ailtonmsj/poccharles-frontend:v1
+        #imagePullPolicy: Always
+        volumeMounts:
+        - mountPath: /www
+          name: tela-frontend
+      volumes:
+      - name: tela-frontend
+        configMap:
+          name: tela-frontend
+---
