@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <title>VERSAO 1</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -296,7 +297,6 @@ body {
   <h2>Versão 1</h2>
 </div>
 
-
 <!-- The Modal -->
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'"
@@ -305,9 +305,22 @@ class="close" title="Close Modal">&times;</span>
   <!-- Modal Content -->
   <form class="modal-content animate" action="/action_page.php">
     
-    <div class="container">
-      
-
+    <div class="container" id="container">
+      <script type="text/javascript">
+        $.ajax({
+            url: "http://192.168.49.2:30369/",
+            type: "GET",
+            crossDomain: true,
+            success: function (response) {
+                var resp = JSON.parse(response)
+                alert(resp.status);
+              },
+            error: function (xhr, status) {
+                alert("error");
+            }
+        });
+      </script>
+    </div>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Fechar</button>
     </div>
@@ -316,3 +329,7 @@ class="close" title="Close Modal">&times;</span>
 
 </body>
 </html>
+
+
+
+
