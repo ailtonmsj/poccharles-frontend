@@ -10,18 +10,36 @@ spec:
   replicas: 1
   template:
     metadata:
+      name: poccharles-frontend
       labels:
         app: poccharles-frontend
     spec:
       containers:
       - name: poccharles-frontend
         image: ailtonmsj/poccharles-frontend:v1
-        #imagePullPolicy: Always
+        imagePullPolicy: Always
         volumeMounts:
-        - mountPath: /www
-          name: tela-frontend
+        - mountPath: /www/
+          name: index-base
+#        - mountPath: /css/
+#          name: index-style
+#        - mountPath: /js/
+#          name: index-script
+#        command:
+#        - sh
+#        - -c
+#        - chmod 777 /www/
+#        - mkdir /www/css
+#        - mkdir /www/js
+#        - cp /css/* /www/css/ && cp /js/* /www/js/
       volumes:
-      - name: tela-frontend
+      - name: index-base
         configMap:
-          name: tela-frontend
+          name: index-base
+#      - name: index-style
+#        configMap:
+#          name: index-style
+#      - name: index-script
+#        configMap:
+#          name: index-script
 ---
