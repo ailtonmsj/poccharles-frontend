@@ -44,10 +44,18 @@
         
         <!-- Modal Script -->
         <div class="container" id="container">
-
-          <!-- Inclusao do Script que carrega as informacoes do modal -->
-          <script src="carregarInformacoesModal.js"></script>
-
+          <script type="text/javascript">
+            $.ajax({
+                url: "http://192.168.49.2:32643/",
+                type: "GET",
+                success: function (data) {
+                    document.getElementById('container').innerHTML= data;
+                  },
+                error: function (xhr, status) {
+                  document.getElementById('container').innerHTML= "Erro ao carregar informações";
+                }
+            });
+          </script>
         </div>
         <div class="container" style="background-color:#f1f1f1">
           <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Fechar</button>
